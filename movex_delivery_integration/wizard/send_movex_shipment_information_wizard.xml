@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="wizard_movex_shipment_information_register_form" model="ir.ui.view">
+        <field name="name">Send Movex Shipment Information</field>
+        <field name="model">send.movex.shipment.information</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="Shipment Information">
+                            <field name="shipment_type"/>
+                            <field name="ref"/>
+                            <field name="cod"/>
+                            <field name="from_city"/>
+                            <field name="to_city"/>
+                            <field name="pieces_number"/>
+                            <field name="weight"/>
+                            <field name="width"/>
+                            <field name="length"/>
+                            <field name="height"/>
+                        </group>
+
+                        <group string="sender_information">
+                            <field name="sender_name"/>
+                            <field name="sender_address"/>
+                            <field name="sender_note"/>
+                        </group>
+
+                        <group string="Client Information">
+                            <field name="client_name"/>
+                            <field name="client_phone1"/>
+                            <field name="client_phone2"/>
+                            <field name="client_email"/>
+                            <field name="client_address"/>
+                            <field name="client_note"/>
+                        </group>
+
+                    </group>
+                    <footer>
+                        <button string="Send" type="object" name="send_shipment_to_movex"
+                                class="oe_highlight"/>
+                        <button class="btn btn-secondary oe_button oe_form_button" special="cancel" string="Cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="movex_shipment_information_send_action">
+        <field name="name">Send Movex Shipment Information</field>
+        <field name="res_model">send.movex.shipment.information</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_movex_shipment_information_register_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

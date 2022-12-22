@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_movex_city,movex.city.manager,model_movex_city,base_delivery_integration.shipment_admin,1,1,1,1

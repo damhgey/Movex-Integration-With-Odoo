@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="movex_inherit_stock_picking_form" model="ir.ui.view">
+        <field name="name">movex.inherit.stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//header" position="inside">
+                <button name="%(movex_delivery_integration.movex_shipment_information_send_action)d"
+                        string="Send To Movex"
+                        groups="base_delivery_integration.shipment_admin"
+                        attrs="{'invisible': ['|', '|', ('state', '!=', 'done'), ('shipment_registered', '=', True), ('shipment_provider', '!=', 'movex')]}"
+                        class="oe_highlight"
+                        type="action"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
